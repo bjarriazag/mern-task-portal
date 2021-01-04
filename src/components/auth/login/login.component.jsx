@@ -1,16 +1,30 @@
-import React from 'react';
-
-const handleLogin = (event) => {
-  console.log(event);
-};
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-  const title = 'Login';
+  // States
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+  // Data
+  const { email, password } = user;
+
+  const handleLogin = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Validations
+    // Actions
+  };
+
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
-        <h1>{title}</h1>
-        <form>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
           <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input
@@ -18,6 +32,7 @@ const Login = () => {
               id="txtEmail"
               name="email"
               placeholder="Your email"
+              value={email}
               onChange={handleLogin}
             />
           </div>
@@ -28,6 +43,7 @@ const Login = () => {
               id="txtPassword"
               name="password"
               placeholder="Your password"
+              value={password}
               onChange={handleLogin}
             />
           </div>
@@ -35,6 +51,9 @@ const Login = () => {
             <input type="submit" className="btn btn-primario btn-block" value="Login" />
           </div>
         </form>
+        <Link to="/new-account" className="enlace-cuenta">
+          Create new account
+        </Link>
       </div>
     </div>
   );
