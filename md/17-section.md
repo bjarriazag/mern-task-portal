@@ -10,5 +10,6 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 
 ## Content
 
-- #### Section 16 : MERN: Administrador de Proyectos y Tareas- Primeros Pasos
-- #### Section 17 : MERN: Creando la página de Login y Crear cuenta con react
+### Section 17 : MERN: Creando la página de Login y Crear cuenta con react
+
+192. Creando el Formulario de Login
