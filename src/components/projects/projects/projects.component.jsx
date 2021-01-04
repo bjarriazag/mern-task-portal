@@ -1,8 +1,15 @@
 import React from 'react';
+import Sidebar from '../../layout/sidebar/sidebar.component';
 
-const Projects = () => {
-  const append = 'From';
-  return <h1>{append} Projects</h1>;
-};
+const Projects = () => (
+  <div className="contenedor-app">
+    <Sidebar />
+    <div className="seccion-principal">
+      <main>
+        <div className="contenedor-tareas" />
+      </main>
+    </div>
+  </div>
+);
 
 export default Projects;
