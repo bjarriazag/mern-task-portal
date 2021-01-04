@@ -14,3 +14,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 
 195. Primeros Pasos
 196. Creando el Formulario para Nuevos Proyectos
+197. State y funciones para nuevos proyectos
