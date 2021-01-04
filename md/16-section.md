@@ -10,4 +10,9 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 
 ## Content
 
-- #### Section 16 : MERN: Administrador de Proyectos y Tareas- Primeros Pasos
+### Section 16 : MERN: Administrador de Proyectos y Tareas- Primeros Pasos
+
+188. El Proyecto que vamos a construir
+189. Qué es el MERN Stack?
+190. Creando la App y Estructura Básica
+191. Creando los componentes y routing
