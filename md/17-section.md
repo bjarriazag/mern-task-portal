@@ -14,3 +14,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 
 192. Creando el Formulario de Login
 193. State y funciones para el Componente
+194. Creando el Componente de Crear Cuenta
