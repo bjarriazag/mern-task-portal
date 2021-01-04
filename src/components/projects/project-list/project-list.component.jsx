@@ -2,11 +2,15 @@ import React from 'react';
 import Project from '../project/project.component';
 
 const ProjectList = () => {
-  const projects = [{ name: 'Online Shop' }, { name: 'Intranet' }, { name: 'Web Design' }];
+  const projects = [
+    { id: 1, name: 'Online Shop' },
+    { id: 2, name: 'Intranet' },
+    { id: 3, name: 'Web Design' },
+  ];
   return (
     <ul className="listado-proyectos">
       {projects.map((project) => (
-        <Project project={project} />
+        <Project key={project.id} project={project} />
       ))}
     </ul>
   );
