@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines"
+  ],
+  "plugins": [
+    "stylelint-color-format",
+    "stylelint-order"
+  ],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "double",
+    "no-duplicate-selectors": true,
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "color-named": "never",
+    "property-no-unknown": true,
+    "color-no-invalid-hex": true,
+    "max-empty-lines": 1,
+    "declaration-block-semicolon-newline-after": "always",
+    "selector-no-qualifying-type": null,
+    "scss/at-mixin-pattern": "^[a-z][a-z0-9-_]*[a-z0-9]$",
+    "declaration-block-no-duplicate-properties": null,
+    "max-nesting-depth": [
+      10,
+      {
+        "ignoreAtRules": [
+          "media"
+        ]
+      }
+    ],
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-order": [
+      "height",
+      "width"
+    ]
+  }
+}
