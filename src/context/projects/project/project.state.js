@@ -7,6 +7,7 @@ import {
   GET_PROJECTS,
   ADD_PROJECT,
   VALIDATE_FORM_PROJECT,
+  GET_CURRENT_PROJECT,
 } from '../../../types/projects/project.types';
 
 const ProjectState = (propsData) => {
@@ -21,6 +22,7 @@ const ProjectState = (propsData) => {
     showForm: false,
     projects: [],
     hasError: false,
+    project: null,
   };
   // Dispatch to execute actions
   const [state, dispatch] = useReducer(projectReducer, initialState);
@@ -52,6 +54,12 @@ const ProjectState = (propsData) => {
       payload: hasError,
     });
   };
+  const setCurrentProject = (projectID) => {
+    dispatch({
+      type: GET_CURRENT_PROJECT,
+      payload: projectID,
+    });
+  };
 
   return (
     <ProjectContext.Provider
@@ -59,10 +67,12 @@ const ProjectState = (propsData) => {
         showForm: state.showForm,
         projects: state.projects,
         hasError: state.hasError,
+        project: state.project,
         handleShowForm,
         getProjects,
         addProject,
         setHasError,
+        setCurrentProject,
       }}
     >
       {propsData.children}

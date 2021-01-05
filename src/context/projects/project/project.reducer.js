@@ -3,6 +3,7 @@ import {
   GET_PROJECTS,
   ADD_PROJECT,
   VALIDATE_FORM_PROJECT,
+  GET_CURRENT_PROJECT,
 } from '../../../types/projects/project.types';
 
 const projectReducer = (state, action) => {
@@ -27,6 +28,11 @@ const projectReducer = (state, action) => {
       return {
         ...state,
         hasError: action.payload,
+      };
+    case GET_CURRENT_PROJECT:
+      return {
+        ...state,
+        project: state.projects.filter((project) => project.id === action.payload)[0],
       };
     default:
       return state;
