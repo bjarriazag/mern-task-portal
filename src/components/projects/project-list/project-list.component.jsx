@@ -11,7 +11,7 @@ const ProjectList = () => {
     getProjects();
   }, []);
   // [Validation] Show projects only if is not empty
-  if (projects.length === 0) return null;
+  if (projects.length === 0) return <p>No projects exist</p>;
 
   return (
     <ul className="listado-proyectos">

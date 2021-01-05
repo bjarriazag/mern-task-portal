@@ -8,6 +8,7 @@ import {
   ADD_PROJECT,
   VALIDATE_FORM_PROJECT,
   GET_CURRENT_PROJECT,
+  DELETE_PROJECT,
 } from '../../../types/projects/project.types';
 
 const ProjectState = (propsData) => {
@@ -60,6 +61,12 @@ const ProjectState = (propsData) => {
       payload: projectID,
     });
   };
+  const setDeleteProject = (projectID) => {
+    dispatch({
+      type: DELETE_PROJECT,
+      payload: projectID,
+    });
+  };
 
   return (
     <ProjectContext.Provider
@@ -73,6 +80,7 @@ const ProjectState = (propsData) => {
         addProject,
         setHasError,
         setCurrentProject,
+        setDeleteProject,
       }}
     >
       {propsData.children}

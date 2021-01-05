@@ -5,7 +5,11 @@ import ProjectContext from '../../../context/projects/project/project.context';
 const TaskList = () => {
   // State context
   const projectContext = useContext(ProjectContext);
-  const { currentProject } = projectContext;
+  const { currentProject, setDeleteProject } = projectContext;
+  // Functions
+  const handleDeleteProject = (projectID) => {
+    setDeleteProject(projectID);
+  };
 
   const projectTasks = [
     { id: 1, name: 'Select platform', status: true },
@@ -26,7 +30,13 @@ const TaskList = () => {
           projectTasks.map((projectTask) => <Task key={projectTask.id} projectTask={projectTask} />)
         )}
       </ul>
-      <button type="button" id="btnDeleteProject" name="deleteProject" className="btn btn-eliminar">
+      <button
+        type="button"
+        id="btnDeleteProject"
+        name="deleteProject"
+        className="btn btn-eliminar"
+        onClick={() => handleDeleteProject(currentProject.id)}
+      >
         Delete Project &times;
       </button>
     </Fragment>
