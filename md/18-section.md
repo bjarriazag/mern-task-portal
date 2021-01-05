@@ -23,3 +23,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 203. Creando el Provider de Proyectos
 204. Mostrando el Formulario de Nuevos Proyectos de forma condicional
 205. Agregando la función para mostrar el Formulario
+206. Agregando los Proyectos con Context

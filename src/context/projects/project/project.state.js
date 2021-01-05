@@ -6,6 +6,12 @@ import PROJECT_FORM from '../../../types/projects/project.types';
 const ProjectState = (propsData) => {
   const initialState = {
     showForm: false,
+    projects: [
+      { id: 1, name: 'Online Shop' },
+      { id: 2, name: 'Intranet' },
+      { id: 3, name: 'Web Design' },
+      { id: 4, name: 'MERN' },
+    ],
   };
   // Dispatch to execute actions
   const [state, dispatch] = useReducer(projectReducer, initialState);
@@ -17,7 +23,9 @@ const ProjectState = (propsData) => {
   };
 
   return (
-    <ProjectContext.Provider value={{ showForm: state.showForm, handleShowForm }}>
+    <ProjectContext.Provider
+      value={{ showForm: state.showForm, projects: state.projects, handleShowForm }}
+    >
       {propsData.children}
     </ProjectContext.Provider>
   );
