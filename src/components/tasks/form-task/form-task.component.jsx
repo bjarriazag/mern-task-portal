@@ -7,11 +7,12 @@ const FormTask = () => {
   const projectContext = useContext(ProjectContext);
   const { currentProject } = projectContext;
   const taskContext = useContext(TaskContext);
-  const { addTask } = taskContext;
+  const { addTask, errorTask, validationsTask, getTasks } = taskContext;
   // State
-  const [task, setTask] = useState({
+  const formTaskState = {
     name: '',
-  });
+  };
+  const [task, setTask] = useState(formTaskState);
   const { name } = task;
   if (!currentProject) return null;
   // Functions
@@ -24,11 +25,17 @@ const FormTask = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Validations
+    if (name.trim() === '') {
+      validationsTask();
+      return;
+    }
     // Add task
     task.projectId = currentProject.id;
     task.status = false;
     addTask(task);
+    getTasks(currentProject.id);
     // Reset form
+    setTask(formTaskState);
   };
   return (
     <div className="formulario">
@@ -48,6 +55,7 @@ const FormTask = () => {
           <input type="submit" className="btn btn-block btn-primario btn-submit" value="Add Task" />
         </div>
       </form>
+      {errorTask ? <p className="mensaje error">Task name is required</p> : null}
     </div>
   );
 };

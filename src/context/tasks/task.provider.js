@@ -3,13 +3,14 @@ import React, { useReducer } from 'react';
 import TaskContext from './task.context';
 import taskReducer from './task.reducer';
 import projectTasks from './tasks.data';
-import { PROJECT_TASKS, ADD_TASK } from './task.types';
+import { PROJECT_TASKS, ADD_TASK, VALIDATE_TASK } from './task.types';
 
 const TaskProvidier = (propsData) => {
   // State
   const taskState = {
     tasks: projectTasks,
     projectTasks: null,
+    errorTask: false,
   };
   const [state, dispatch] = useReducer(taskReducer, taskState);
   // Functions
@@ -26,10 +27,22 @@ const TaskProvidier = (propsData) => {
       payload: task,
     });
   };
+  const validationsTask = () => {
+    dispatch({
+      type: VALIDATE_TASK,
+    });
+  };
   // Context Provider
   return (
     <TaskContext.Provider
-      value={{ tasks: state.tasks, projectTasks: state.projectTasks, getTasks, addTask }}
+      value={{
+        tasks: state.tasks,
+        projectTasks: state.projectTasks,
+        errorTask: state.errorTask,
+        getTasks,
+        addTask,
+        validationsTask,
+      }}
     >
       {propsData.children}
     </TaskContext.Provider>
