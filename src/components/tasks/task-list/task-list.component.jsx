@@ -1,16 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import Task from '../task/task.component';
+import ProjectContext from '../../../context/projects/project/project.context';
 
 const TaskList = () => {
+  // State context
+  const projectContext = useContext(ProjectContext);
+  const { currentProject } = projectContext;
+
   const projectTasks = [
     { id: 1, name: 'Select platform', status: true },
     { id: 2, name: 'Select colors', status: false },
     { id: 3, name: 'Select framework', status: true },
     { id: 4, name: 'Select hosting', status: true },
   ];
+  if (!currentProject) return <h2>Select project</h2>;
   return (
     <Fragment key="fragmentTaskList">
-      <h2>Project: Online Shop</h2>
+      <h2>Project: {currentProject.name}</h2>
       <ul className="listado-tareas">
         {projectTasks.length === 0 ? (
           <li className="tarea">

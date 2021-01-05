@@ -32,7 +32,7 @@ const projectReducer = (state, action) => {
     case GET_CURRENT_PROJECT:
       return {
         ...state,
-        project: state.projects.filter((project) => project.id === action.payload)[0],
+        currentProject: state.projects.filter((project) => project.id === action.payload)[0],
       };
     default:
       return state;

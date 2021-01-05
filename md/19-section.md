@@ -15,3 +15,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 208. Primeros pasos para crear nuevos proyectos
 209. Validando el Formulario de Nuevos Proyectos
 210. Colocar un Proyecto en Activo
+211. Mostrando el Nombre del Proyecto

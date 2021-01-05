@@ -22,7 +22,7 @@ const ProjectState = (propsData) => {
     showForm: false,
     projects: [],
     hasError: false,
-    project: null,
+    currentProject: null,
   };
   // Dispatch to execute actions
   const [state, dispatch] = useReducer(projectReducer, initialState);
@@ -67,7 +67,7 @@ const ProjectState = (propsData) => {
         showForm: state.showForm,
         projects: state.projects,
         hasError: state.hasError,
-        project: state.project,
+        currentProject: state.currentProject,
         handleShowForm,
         getProjects,
         addProject,
