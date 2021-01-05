@@ -1,7 +1,12 @@
+import { PROJECT_TASKS } from './task.types';
+
 const taskReducer = (state, action) => {
   switch (action.type) {
-    case 'ACTION_TYPE':
-      return;
+    case PROJECT_TASKS:
+      return {
+        ...state,
+        projectTasks: state.tasks.filter((task) => task.projectId === action.payload),
+      };
     default:
       return state;
   }

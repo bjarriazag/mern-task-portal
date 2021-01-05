@@ -1,0 +1,2 @@
+export const PROJECT_TASKS = 'PROJECT_TASKS';
+export const PROJECT_ADD_TASK = 'PROJECT_ADD_TASK';

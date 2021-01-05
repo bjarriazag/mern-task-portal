@@ -14,3 +14,5 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 
 214. Agregando State y Provider para Tareas
 215. Agregando un ID de Proyecto y pasandolo a los componentes
+216. Creando una función que obtenga las tareas del Proyecto
+217. Filtrando las tareas por proyecto
