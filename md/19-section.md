@@ -16,3 +16,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 209. Validando el Formulario de Nuevos Proyectos
 210. Colocar un Proyecto en Activo
 211. Mostrando el Nombre del Proyecto
+212. Ocultando el Formulario de Tareas si no hay Proyecto Seleccionado
