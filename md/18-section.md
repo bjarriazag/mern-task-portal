@@ -21,3 +21,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 201. Creando el Listado de Tareas
 202. Trabajando con la Interfaz de Tareas
 203. Creando el Provider de Proyectos
+204. Mostrando el Formulario de Nuevos Proyectos de forma condicional

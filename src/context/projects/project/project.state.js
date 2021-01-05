@@ -4,14 +4,14 @@ import projectReducer from './project.reducer';
 
 const ProjectState = (propsData) => {
   const initialState = {
-    form: false,
+    showForm: false,
   };
   // Dispatch to execute actions
   const [state, dispatch] = useReducer(projectReducer, initialState);
   console.log(dispatch);
   // Functions
   return (
-    <ProjectContext.Provider value={{ form: state.form }}>
+    <ProjectContext.Provider value={{ showForm: state.showForm }}>
       {propsData.children}
     </ProjectContext.Provider>
   );
