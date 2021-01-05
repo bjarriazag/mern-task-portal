@@ -4,7 +4,7 @@ import ProjectContext from '../../../context/projects/project/project.context';
 const NewProject = () => {
   // State context
   const projectContext = useContext(ProjectContext);
-  const { showForm } = projectContext;
+  const { showForm, handleShowForm } = projectContext;
   // State
   const [project, setProject] = useState({
     projectName: '',
@@ -24,6 +24,10 @@ const NewProject = () => {
     // State
     // Form
   };
+  // Display form
+  const handleForm = () => {
+    handleShowForm();
+  };
 
   return (
     <Fragment key="fragmentNewProject">
@@ -32,6 +36,7 @@ const NewProject = () => {
         id="btnNewProject"
         name="newProject"
         className="btn btn-block btn-primario"
+        onClick={handleForm}
       >
         New Project
       </button>
