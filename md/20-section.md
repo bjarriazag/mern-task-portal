@@ -13,3 +13,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 ### Section 20 : MERN: Crear Tareas para los Proyectos
 
 214. Agregando State y Provider para Tareas
+215. Agregando un ID de Proyecto y pasandolo a los componentes
