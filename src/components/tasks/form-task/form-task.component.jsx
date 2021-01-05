@@ -6,9 +6,16 @@ const FormTask = () => {
   const projectContext = useContext(ProjectContext);
   const { currentProject } = projectContext;
   if (!currentProject) return null;
+  // Functions
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Validations
+    // Add task
+    // Reset form
+  };
   return (
     <div className="formulario">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="contenedor-input">
           <input
             type="text"
