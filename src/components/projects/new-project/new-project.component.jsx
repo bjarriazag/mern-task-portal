@@ -4,7 +4,7 @@ import ProjectContext from '../../../context/projects/project/project.context';
 const NewProject = () => {
   // State context
   const projectContext = useContext(ProjectContext);
-  const { showForm, handleShowForm } = projectContext;
+  const { showForm, handleShowForm, addProject } = projectContext;
   // State
   const [project, setProject] = useState({
     projectName: '',
@@ -21,8 +21,13 @@ const NewProject = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Validations
+    if (projectName === '') {
+      return;
+    }
     // State
-    // Form
+    addProject(project);
+    // Reset form
+    setProject({ projectName: '' });
   };
   // Display form
   const handleForm = () => {
