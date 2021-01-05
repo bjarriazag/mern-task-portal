@@ -4,7 +4,7 @@ import ProjectContext from '../../../context/projects/project/project.context';
 const NewProject = () => {
   // State context
   const projectContext = useContext(ProjectContext);
-  const { showForm, handleShowForm, addProject } = projectContext;
+  const { showForm, hasError, handleShowForm, addProject, setHasError } = projectContext;
   // State
   const [project, setProject] = useState({
     projectName: '',
@@ -22,8 +22,10 @@ const NewProject = () => {
     event.preventDefault();
     // Validations
     if (projectName === '') {
+      setHasError(true);
       return;
     }
+    setHasError(false);
     // State
     addProject(project);
     // Reset form
@@ -65,6 +67,7 @@ const NewProject = () => {
           />
         </form>
       ) : null}
+      {hasError ? <p className="mensaje error">Project Name is required</p> : null}
     </Fragment>
   );
 };

@@ -13,3 +13,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 ### Section 19 : MERN: Creando Proyectos Nuevos con React y Seleccionando el Proyecto Actual
 
 208. Primeros pasos para crear nuevos proyectos
+209. Validando el Formulario de Nuevos Proyectos

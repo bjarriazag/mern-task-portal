@@ -2,7 +2,12 @@ import { v4 as uuidv4 } from 'uuid';
 import React, { useReducer } from 'react';
 import ProjectContext from './project.context';
 import projectReducer from './project.reducer';
-import { PROJECT_FORM, GET_PROJECTS, ADD_PROJECT } from '../../../types/projects/project.types';
+import {
+  PROJECT_FORM,
+  GET_PROJECTS,
+  ADD_PROJECT,
+  VALIDATE_FORM_PROJECT,
+} from '../../../types/projects/project.types';
 
 const ProjectState = (propsData) => {
   const projects = [
@@ -15,6 +20,7 @@ const ProjectState = (propsData) => {
   const initialState = {
     showForm: false,
     projects: [],
+    hasError: false,
   };
   // Dispatch to execute actions
   const [state, dispatch] = useReducer(projectReducer, initialState);
@@ -40,15 +46,23 @@ const ProjectState = (propsData) => {
       payload: project,
     });
   };
+  const setHasError = (hasError) => {
+    dispatch({
+      type: VALIDATE_FORM_PROJECT,
+      payload: hasError,
+    });
+  };
 
   return (
     <ProjectContext.Provider
       value={{
         showForm: state.showForm,
         projects: state.projects,
+        hasError: state.hasError,
         handleShowForm,
         getProjects,
         addProject,
+        setHasError,
       }}
     >
       {propsData.children}
