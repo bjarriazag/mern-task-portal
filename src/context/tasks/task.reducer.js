@@ -6,6 +6,7 @@ import {
   STATUS_TASK,
   CURRENT_TASK,
   EDIT_TASK,
+  CLEAR_CURRENT_TASK,
 } from './task.types';
 
 const taskReducer = (state, action) => {
@@ -41,6 +42,11 @@ const taskReducer = (state, action) => {
       return {
         ...state,
         currentTask: action.payload,
+      };
+    case CLEAR_CURRENT_TASK:
+      return {
+        ...state,
+        currentTask: null,
       };
     default:
       return state;

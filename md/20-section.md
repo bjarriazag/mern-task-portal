@@ -26,3 +26,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 225. Seleccionando una Tarea para poderla editar
 226. Cargando la tarea en el formulario
 227. Modificando la tarea
+228. Limpiando la tarea seleccionada

@@ -5,3 +5,4 @@ export const EDIT_TASK = 'EDIT_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
 export const STATUS_TASK = 'STATUS_TASK';
 export const CURRENT_TASK = 'CURRENT_TASK';
+export const CLEAR_CURRENT_TASK = 'CLEAR_CURRENT_TASK';

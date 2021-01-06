@@ -7,7 +7,15 @@ const FormTask = () => {
   const projectContext = useContext(ProjectContext);
   const { currentProject } = projectContext;
   const taskContext = useContext(TaskContext);
-  const { currentTask, addTask, errorTask, validationsTask, getTasks, setEditTask } = taskContext;
+  const {
+    currentTask,
+    addTask,
+    errorTask,
+    validationsTask,
+    getTasks,
+    setEditTask,
+    setClearCurrentTask,
+  } = taskContext;
   // State
   const formTaskState = {
     name: '',
@@ -46,6 +54,7 @@ const FormTask = () => {
     } else {
       // Edit task
       setEditTask(task);
+      setClearCurrentTask();
     }
     getTasks(currentProject.id);
     // Reset form

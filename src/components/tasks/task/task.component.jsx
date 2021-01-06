@@ -9,7 +9,6 @@ const Task = (propsData) => {
   // Functions
   const hancldeDeleteTaskById = (taskID) => {
     deleteTaskById(taskID);
-    console.log(projectTask.projectId);
     getTasks(projectTask.projectId);
   };
   const handleChangeStatusTask = (task) => {
