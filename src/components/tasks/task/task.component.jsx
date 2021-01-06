@@ -5,7 +5,7 @@ const Task = (propsData) => {
   const { projectTask } = propsData;
   // State Context
   const taskContext = useContext(TaskContext);
-  const { deleteTaskById, getTasks, changeStatusTask } = taskContext;
+  const { deleteTaskById, getTasks, changeStatusTask, setCurrentTask } = taskContext;
   // Functions
   const hancldeDeleteTaskById = (taskID) => {
     deleteTaskById(taskID);
@@ -19,6 +19,9 @@ const Task = (propsData) => {
       task.status = true;
     }
     changeStatusTask(task);
+  };
+  const handleCurrentTask = (task) => {
+    setCurrentTask(task);
   };
   return (
     <li className="tarea sombra">
@@ -47,7 +50,13 @@ const Task = (propsData) => {
         )}
       </div>
       <div className="acciones">
-        <button type="button" id="btnEdit" name="edit" className="btn btn-primario">
+        <button
+          type="button"
+          id="btnEdit"
+          name="edit"
+          className="btn btn-primario"
+          onClick={() => handleCurrentTask(projectTask)}
+        >
           Edit
         </button>
         <button

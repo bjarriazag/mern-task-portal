@@ -23,3 +23,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 222. Agregando una animación cuando se crean nuevas tareas
 223. Agregando una animación a los Proyectos
 224. Modificar el Estado de una tarea
+225. Seleccionando una Tarea para poderla editar
