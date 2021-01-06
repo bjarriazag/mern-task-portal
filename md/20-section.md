@@ -19,3 +19,4 @@ Incluye React Hooks Gatsby GraphQL Firestore Redux Context MERN Next.js Styled C
 218. Creando un dispatch para nuevas tareas
 219. Insertando tareas en el Proyecto Actual
 220. Validando el Formulario y algunos ajustes
+221. Eliminando Tareas
