@@ -5,23 +5,43 @@ const Task = (propsData) => {
   const { projectTask } = propsData;
   // State Context
   const taskContext = useContext(TaskContext);
-  const { deleteTaskById, getTasks } = taskContext;
+  const { deleteTaskById, getTasks, changeStatusTask } = taskContext;
   // Functions
   const hancldeDeleteTaskById = (taskID) => {
     deleteTaskById(taskID);
     console.log(projectTask.projectId);
     getTasks(projectTask.projectId);
   };
+  const handleChangeStatusTask = (task) => {
+    if (task.status) {
+      task.status = false;
+    } else {
+      task.status = true;
+    }
+    changeStatusTask(task);
+  };
   return (
     <li className="tarea sombra">
       <p>{projectTask.name}</p>
       <div className="estado">
         {projectTask.status ? (
-          <button type="button" id="btnCompleted" name="completed" className="completo">
+          <button
+            type="button"
+            id="btnCompleted"
+            name="completed"
+            className="completo"
+            onClick={() => handleChangeStatusTask(projectTask)}
+          >
             Completed
           </button>
         ) : (
-          <button type="button" id="btnNoCompleted" name="noCompleted" className="incompleto">
+          <button
+            type="button"
+            id="btnNoCompleted"
+            name="noCompleted"
+            className="incompleto"
+            onClick={() => handleChangeStatusTask(projectTask)}
+          >
             Not Completed
           </button>
         )}
