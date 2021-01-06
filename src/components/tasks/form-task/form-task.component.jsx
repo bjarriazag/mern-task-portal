@@ -7,7 +7,7 @@ const FormTask = () => {
   const projectContext = useContext(ProjectContext);
   const { currentProject } = projectContext;
   const taskContext = useContext(TaskContext);
-  const { currentTask, addTask, errorTask, validationsTask, getTasks } = taskContext;
+  const { currentTask, addTask, errorTask, validationsTask, getTasks, setEditTask } = taskContext;
   // State
   const formTaskState = {
     name: '',
@@ -37,10 +37,16 @@ const FormTask = () => {
       validationsTask();
       return;
     }
-    // Add task
-    task.projectId = currentProject.id;
-    task.status = false;
-    addTask(task);
+    // Add or Edit
+    if (currentTask === null) {
+      // Add task
+      task.projectId = currentProject.id;
+      task.status = false;
+      addTask(task);
+    } else {
+      // Edit task
+      setEditTask(task);
+    }
     getTasks(currentProject.id);
     // Reset form
     setTask(formTaskState);

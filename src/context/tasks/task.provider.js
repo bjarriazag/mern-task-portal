@@ -10,6 +10,7 @@ import {
   DELETE_TASK,
   STATUS_TASK,
   CURRENT_TASK,
+  EDIT_TASK,
 } from './task.types';
 
 const TaskProvidier = (propsData) => {
@@ -58,6 +59,12 @@ const TaskProvidier = (propsData) => {
       payload: task,
     });
   };
+  const setEditTask = (task) => {
+    dispatch({
+      type: EDIT_TASK,
+      payload: task,
+    });
+  };
   // Context Provider
   return (
     <TaskContext.Provider
@@ -72,6 +79,7 @@ const TaskProvidier = (propsData) => {
         deleteTaskById,
         changeStatusTask,
         setCurrentTask,
+        setEditTask,
       }}
     >
       {propsData.children}
