@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ProjectContext from '../../../context/projects/project/project.context';
 import TaskContext from '../../../context/tasks/task.context';
 
@@ -7,13 +7,21 @@ const FormTask = () => {
   const projectContext = useContext(ProjectContext);
   const { currentProject } = projectContext;
   const taskContext = useContext(TaskContext);
-  const { addTask, errorTask, validationsTask, getTasks } = taskContext;
+  const { currentTask, addTask, errorTask, validationsTask, getTasks } = taskContext;
   // State
   const formTaskState = {
     name: '',
   };
   const [task, setTask] = useState(formTaskState);
   const { name } = task;
+  // Effect
+  useEffect(() => {
+    if (currentTask !== null) {
+      setTask(currentTask);
+    } else {
+      setTask(formTaskState);
+    }
+  }, [currentTask]);
   if (!currentProject) return null;
   // Functions
   const handleChange = (event) => {
@@ -52,7 +60,11 @@ const FormTask = () => {
           />
         </div>
         <div className="contenedor-input">
-          <input type="submit" className="btn btn-block btn-primario btn-submit" value="Add Task" />
+          <input
+            type="submit"
+            className="btn btn-block btn-primario btn-submit"
+            value={currentTask ? 'Edit Task' : 'Add Task'}
+          />
         </div>
       </form>
       {errorTask ? <p className="mensaje error">Task name is required</p> : null}
